@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    IMAGE = 'DOCKERHUB_USER/springboot-jenkins-demo'
+    IMAGE = 'shaikkhizar/springboot-jenkins'
   }
   stages {
     stage('Checkout') {
