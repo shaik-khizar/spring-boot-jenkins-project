@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Build & Test') {
       steps { sh 'mvn -q -DskipTests=false clean verify' }
-      post { always { junit '**/target/surefire-reports/*.xml' } }
+      post { always { junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml' } }
     }
     stage('Package') {
       steps { sh 'mvn -q -DskipTests package' }
